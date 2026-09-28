@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vertaag — Problem-Solution Deck | Mae Villareal</title>
+<meta name="description" content="Problem-Solution Deck for Vertaag, designed by Mae Villareal, graphic designer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27%230B0F0B%27/%3E%3Ctext x=%2750%25%27 y=%2752%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-weight=%27800%27 font-size=%2738%27 fill=%27%23C6F135%27%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0B0F0B; --panel:#11160F; --line:rgba(255,255,255,.10);
+    --glass:rgba(255,255,255,.06); --glass-brd:rgba(255,255,255,.14);
+    --green:#C6F135; --green-dim:#8FAE2A; --white:#F4F6EF; --grey:#9AA396;
+    --radius:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;line-height:1.55;
+    padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);overflow-x:hidden}
+  h1,h2,h3{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:-.01em;color:var(--white)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  section{padding:88px 0}
+  @media(max-width:700px){section{padding:56px 0}.wrap{padding:0 20px}}
+
+  header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding:18px 20px}
+  .nav{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+    background:var(--glass);border:1px solid var(--glass-brd);backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);border-radius:100px;padding:10px 12px 10px 22px}
+  .logo{font-family:'Sora';font-weight:800;font-size:1.05rem}
+  .logo span{color:var(--green)}
+  nav ul{list-style:none;display:flex;gap:28px;font-size:.92rem;color:var(--grey)}
+  nav ul a:hover{color:var(--white)}
+  .btn{display:inline-block;background:var(--green);color:var(--black);font-weight:600;font-size:.9rem;font-family:inherit;
+    padding:11px 22px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border:1px solid var(--glass-brd);color:var(--white)}
+  .nav-right{display:flex;align-items:center;gap:8px}
+  .burger{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--glass-brd);background:transparent;cursor:pointer;
+    flex-direction:column;align-items:center;justify-content:center;gap:5px}
+  .burger span{display:block;width:16px;height:2px;background:currentColor;color:var(--white);transition:transform .25s}
+  .burger[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+  .mnav{display:none;max-width:1180px;margin:8px auto 0;background:rgba(17,22,15,.96);border:1px solid var(--glass-brd);
+    border-radius:20px;padding:8px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .mnav a{display:block;padding:13px 16px;border-radius:12px;color:var(--white);font-size:.98rem}
+  .mnav a:hover{background:var(--glass)}
+  .mnav.open{display:block}
+  @media(max-width:820px){nav ul{display:none}.burger{display:flex}}
+  @media(min-width:821px){.mnav{display:none!important}}
+
+  .kicker{color:var(--green);font-size:.9rem;margin-bottom:10px}
+  .sec-head{max-width:640px;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(1.7rem,3.2vw,2.4rem)}
+
+  /* portfolio cards — widths follow a 12-column grid like the original work-samples page */
+  .port-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;align-items:start}
+  .port-card{grid-column:span var(--span,4);border-radius:16px;overflow:hidden;border:1px solid var(--glass-brd);
+    background:var(--panel);display:block;transition:transform .2s,border-color .2s}
+  @media(max-width:860px){.port-card{grid-column:span 6}.port-card[style*="--span:12"]{grid-column:span 12}}
+  @media(max-width:520px){.port-card{grid-column:span 12}}
+  .port-card:hover{transform:translateY(-3px);border-color:rgba(198,241,53,.45)}
+  .port-card .thumb{overflow:hidden;position:relative;background:#0e130d}
+  .port-card .thumb img{width:100%;height:auto;transition:transform .4s}
+  .port-card:hover .thumb img{transform:scale(1.03)}
+  .tag{position:absolute;top:12px;right:12px;background:rgba(11,15,11,.78);color:var(--white);font-size:.7rem;
+    padding:5px 10px;border-radius:100px;opacity:0;transition:opacity .2s;backdrop-filter:blur(6px)}
+  .port-card:hover .tag,.port-card:focus-visible .tag{opacity:1}
+  .port-info{padding:14px 16px}
+  .port-info .cat{color:var(--green);font-size:.72rem;margin-bottom:4px}
+  .port-info h3{font-size:.92rem;font-weight:600;font-family:'Inter'}
+  .port-info .proj{color:var(--grey);font-size:.8rem;margin-top:2px}
+  .hidden{display:none!important}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(5,7,5,.94);display:none;align-items:center;justify-content:center;padding:60px 16px}
+  .lb.open{display:flex}
+  .lb img{max-width:min(1200px,100%);max-height:100%;object-fit:contain;border-radius:10px}
+  .lb button{position:absolute;background:var(--glass);border:1px solid var(--glass-brd);color:var(--white);
+    width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer;line-height:1}
+  .lb .lb-close{top:14px;right:14px}
+  .lb .lb-prev{left:14px;top:50%;transform:translateY(-50%)}
+  .lb .lb-next{right:14px;top:50%;transform:translateY(-50%)}
+  .lb-cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:var(--grey);font-size:.85rem}
+
+  footer{border-top:1px solid var(--line);padding:32px 0;color:var(--grey);font-size:.85rem}
+  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+  .socials{display:flex;gap:10px}
+  .socials a{width:36px;height:36px;border-radius:50%;background:var(--glass);border:1px solid var(--glass-brd);
+    display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:var(--white)}
+  .socials a:hover{color:var(--green);border-color:var(--green)}
+
+  .proj-head{padding:48px 0 36px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  .back{color:var(--grey);font-size:.88rem;display:inline-flex;gap:8px;align-items:center;margin-bottom:22px}
+  .back:hover{color:var(--green)}
+  .proj-head h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.08}
+  .proj-meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:var(--glass);border:1px solid var(--glass-brd);border-radius:100px;padding:7px 14px;font-size:.82rem;color:var(--grey)}
+  .chip b{color:var(--white);font-weight:600}
+  .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;padding-bottom:24px}
+  .g-item{grid-column:span var(--span,6);border-radius:14px;overflow:hidden;border:1px solid var(--glass-brd);background:var(--panel);cursor:zoom-in}
+  .g-item img{width:100%;height:auto;transition:transform .4s}
+  .g-item:hover img{transform:scale(1.02)}
+  @media(max-width:600px){.g-item{grid-column:span 12}}
+  .pager{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:40px 0 0}
+  .pager a{background:var(--glass);border:1px solid var(--glass-brd);border-radius:16px;padding:18px 20px;transition:border-color .2s}
+  .pager a:hover{border-color:var(--green)}
+  .pager small{color:var(--grey);font-size:.78rem;display:block;margin-bottom:4px}
+  .pager span{font-family:'Sora';font-weight:600}
+  .pager .next{text-align:right}
+  .related h2{font-size:1.5rem;margin-bottom:24px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="../../index.html">Mae<span>.</span></a>
+    <nav><ul>
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#services">Services</a></li>
+      <li><a href="../../index.html#experience">Work Experience</a></li>
+      <li><a href="../../index.html#work">Portfolio</a></li>
+    </ul></nav>
+    <div class="nav-right">
+      <a class="btn" href="mailto:norleenvillareal@gmail.com">Contact Me</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile">
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#services">Services</a>
+    <a href="../../index.html#experience">Work Experience</a>
+    <a href="../../index.html#work">Portfolio</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="proj-head">
+    <div>
+      <a class="back" href="../../index.html#work">&larr; All work samples</a>
+      <div class="kicker">Pitch Deck</div>
+      <h1>Vertaag</h1>
+    </div>
+    <div class="proj-meta">
+      <span class="chip"><b>Problem-Solution Deck</b></span>
+      <span class="chip">15 images</span>
+    </div>
+  </div>
+
+  <div class="gallery">
+      <a class="g-item" style="--span:12" href="https://ucarecdn.com/b9498fa8-6b2a-4049-b9a4-e6bf4302fd53/VertaagThumbnail.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/b9498fa8-6b2a-4049-b9a4-e6bf4302fd53/VertaagThumbnail.jpg" alt="Vertaag — page 1" ></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/31eef7d1-e612-4b10-a353-1d98d8828a56/v1.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/31eef7d1-e612-4b10-a353-1d98d8828a56/v1.jpg" alt="Vertaag — page 2" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/2aff2e19-e420-4d59-825b-29d1796ca411/v2.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/2aff2e19-e420-4d59-825b-29d1796ca411/v2.jpg" alt="Vertaag — page 3" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/126f3df9-fcd4-4701-944d-5c4da02721f6/v3.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/126f3df9-fcd4-4701-944d-5c4da02721f6/v3.jpg" alt="Vertaag — page 4" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/f33c3298-3596-4438-a666-1038dd63b1f5/v4.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/f33c3298-3596-4438-a666-1038dd63b1f5/v4.jpg" alt="Vertaag — page 5" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/29a6062c-3231-42ce-b5ac-e18cc6f206b3/v5.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/29a6062c-3231-42ce-b5ac-e18cc6f206b3/v5.jpg" alt="Vertaag — page 6" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/bcc5e87c-5dfd-43e5-be2a-10b3d82d9e95/v6.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/bcc5e87c-5dfd-43e5-be2a-10b3d82d9e95/v6.jpg" alt="Vertaag — page 7" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/2d364664-9ccb-4725-b873-630e1ce52ea2/v7.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/2d364664-9ccb-4725-b873-630e1ce52ea2/v7.jpg" alt="Vertaag — page 8" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/210ecb04-2317-4618-87d5-dbff15e57fe4/v8.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/210ecb04-2317-4618-87d5-dbff15e57fe4/v8.jpg" alt="Vertaag — page 9" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/3a40a60f-5d2c-4e43-b0c1-c902b9a37711/v9.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/3a40a60f-5d2c-4e43-b0c1-c902b9a37711/v9.jpg" alt="Vertaag — page 10" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/4e651c57-d813-4719-a54d-789d58eb75d0/v10.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/4e651c57-d813-4719-a54d-789d58eb75d0/v10.jpg" alt="Vertaag — page 11" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/d9d257dd-2744-482c-8035-706842ff778e/v11.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/d9d257dd-2744-482c-8035-706842ff778e/v11.jpg" alt="Vertaag — page 12" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/80a62402-ca15-463c-ac7f-24a77e4e6f57/v12.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/80a62402-ca15-463c-ac7f-24a77e4e6f57/v12.jpg" alt="Vertaag — page 13" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/dc8a28ed-f99e-457b-b6ce-27802f909c30/v13.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/dc8a28ed-f99e-457b-b6ce-27802f909c30/v13.jpg" alt="Vertaag — page 14" loading="lazy"></a>
+      <a class="g-item" style="--span:6" href="https://ucarecdn.com/ca8b8bf5-4356-41cb-8448-4d0bf3f15a3c/v14.jpg" data-lightbox="gallery" data-caption="Vertaag"><img src="https://ucarecdn.com/ca8b8bf5-4356-41cb-8448-4d0bf3f15a3c/v14.jpg" alt="Vertaag — page 15" loading="lazy"></a>
+  </div>
+
+  <div class="pager">
+    <a class="prev" href="../../projects/pitch-deck/oran-capital.html"><small>&larr; Previous project</small><span>Oran Capital</span></a>
+    <a class="next" href="../../projects/pitch-deck/civog.html"><small>Next project &rarr;</small><span>Civog</span></a>
+  </div>
+
+  <section class="related">
+    <h2>Related projects</h2>
+    <div class="port-grid">
+      <a class="port-card" data-cat="pitch" style="--span:4" href="../../projects/pitch-deck/govic-capital.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/924daca2-9371-49e2-bd06-ad25f8d2ae8a/GovicCapitalThumbnail.jpg" alt="Team Pitch Deck — Govic Capital" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Pitch Deck</div><h3>Team Pitch Deck</h3><p class="proj">Govic Capital</p></div></a>
+      <a class="port-card" data-cat="pitch" style="--span:4" href="../../projects/pitch-deck/attobahn.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/27c7823d-e402-41c3-8814-d73477e81646/AttobahnThumbnail.jpg" alt="Problem-Solution Deck — Attobahn" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Pitch Deck</div><h3>Problem-Solution Deck</h3><p class="proj">Attobahn</p></div></a>
+      <a class="port-card" data-cat="pitch" style="--span:4" href="../../projects/pitch-deck/dental-capital.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/488f6f1a-225d-4ae6-bc46-5e3820805538/DentalCapitalThumbnail.jpg" alt="Investor Pitch Deck — Dental Capital" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Pitch Deck</div><h3>Investor Pitch Deck</h3><p class="proj">Dental Capital</p></div></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>© 2026 Mae Villareal — All rights reserved</span>
+    <div class="socials">
+      <a href="https://facebook.com/nmaevillareal" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+      <a href="https://www.linkedin.com/in/nmaev/" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+      <a href="https://www.behance.net/nmaev" aria-label="Behance" target="_blank" rel="noopener">Be</a>
+      <a href="https://dribbble.com/nmaev" aria-label="Dribbble" target="_blank" rel="noopener">Dr</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous">&#8249;</button>
+  <img alt="">
+  <button class="lb-next" aria-label="Next">&#8250;</button>
+  <div class="lb-cap"></div>
+</div>
+
+<script>
+  // mobile menu
+  (function(){
+    const b=document.getElementById('burger'),m=document.getElementById('mnav');
+    function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',()=>set(!m.classList.contains('open')));
+    m.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
+  })();
+
+  // lightbox: groups by data-lightbox value, skips hidden cards
+  (function(){
+    const lb=document.getElementById('lb'),img=lb.querySelector('img'),cap=lb.querySelector('.lb-cap');
+    let set=[],idx=0;
+    function show(){
+      const a=set[idx];
+      img.src=a.getAttribute('href');
+      const t=a.querySelector('h3'),p=a.querySelector('.proj');
+      cap.textContent=(t?t.textContent+(p?' — '+p.textContent:''):(a.dataset.caption||''))+(set.length>1?'   '+(idx+1)+' / '+set.length:'');
+      img.alt=t?t.textContent:'Project image';
+    }
+    function open(a){
+      const g=a.dataset.lightbox;
+      set=[...document.querySelectorAll('[data-lightbox="'+g+'"]')].filter(x=>!x.closest('.hidden'));
+      idx=Math.max(0,set.indexOf(a));show();lb.classList.add('open');document.body.style.overflow='hidden';
+      lb.querySelector('.lb-close').focus();
+    }
+    function close(){lb.classList.remove('open');document.body.style.overflow='';img.removeAttribute('src');}
+    function step(d){idx=(idx+d+set.length)%set.length;show();}
+    document.addEventListener('click',e=>{const a=e.target.closest('[data-lightbox]');if(a){e.preventDefault();open(a);}});
+    lb.querySelector('.lb-close').onclick=close;
+    lb.querySelector('.lb-prev').onclick=()=>step(-1);
+    lb.querySelector('.lb-next').onclick=()=>step(1);
+    lb.addEventListener('click',e=>{if(e.target===lb)close();});
+    document.addEventListener('keydown',e=>{
+      if(!lb.classList.contains('open'))return;
+      if(e.key==='Escape')close();
+      if(e.key==='ArrowRight')step(1);
+      if(e.key==='ArrowLeft')step(-1);
+    });
+  })();
+</script>
+</body>
+</html>
