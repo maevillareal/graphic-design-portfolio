@@ -390,6 +390,8 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line);paddin
 
 .see-more[hidden]{display:none}
 
+/* featured: Open PDF button keeps its natural width */
+.feat-info > .btn{align-self:flex-start}
 /* no sample counts */
 .see-more .n{display:none!important}
 /* general portfolio: nine equal category cards (3 x 3) */
