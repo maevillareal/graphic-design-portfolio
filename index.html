@@ -4,290 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mae Villareal — Graphic Designer</title>
-<meta name="description" content="Mae Villareal is a graphic designer creating brand identities, pitch decks, brochures, flyers, social media graphics and marketing collateral.">
+<meta name="description" content="Mae Villareal is a graphic designer creating logos, brand identities, presentations, print, social media, email and report design.">
 <meta name="theme-color" content="#0A0D09">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27%230B0F0B%27/%3E%3Ctext x=%2750%25%27 y=%2752%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-weight=%27800%27 font-size=%2738%27 fill=%27%23C6F135%27%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0A0D09; --panel:#10140E; --panel-2:#141A11; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
-    --lime:#C6F135; --mint:#79EFC6; --lime-soft:rgba(198,241,53,.12); --lime-line:rgba(198,241,53,.35);
-    --white:#F2F4EC; --grey:#8F998A; --grey-2:#6B7466;
-    --radius:22px; --ease:cubic-bezier(.2,.7,.2,1);
-    --sans:'Inter',system-ui,sans-serif; --display:'Inter Tight','Inter',sans-serif; --serif:'Instrument Serif',Georgia,serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
-  footer{overflow-x:clip}
-  body{background:var(--bg);color:var(--white);font-family:var(--sans);line-height:1.6;font-size:16px;
-    padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);overflow-x:clip;
-    -webkit-font-smoothing:antialiased}
-  body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.05;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.03em;color:var(--white);line-height:1.05}
-  em.s{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime);letter-spacing:-.01em;padding:0 .1em .16em 0;margin-bottom:-.16em;
-    background:linear-gradient(90deg,var(--lime) 10%,var(--mint) 95%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  ::selection{background:var(--lime);color:var(--bg)}
-  :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:8px}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
-  section{padding:120px 0;position:relative}
-  @media(max-width:700px){section{padding:72px 0}.wrap{padding:0 16px}}
-
-  /* reveal */
-  .js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-  .js .rv.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
-
-  /* cursor glow */
-  .cursor-glow{position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;pointer-events:none;z-index:0;
-    background:radial-gradient(closest-side,rgba(198,241,53,.13),rgba(121,239,198,.05) 55%,transparent);opacity:0;transition:opacity .5s;will-change:transform}
-  .cursor-glow.on{opacity:1}
-  @media(hover:none),(pointer:coarse){.cursor-glow{display:none}}
-
-  /* ---------- nav ---------- */
-  header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding:16px 20px}
-  .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;
-    background:rgba(16,20,14,.62);border:1px solid var(--line);backdrop-filter:blur(18px) saturate(140%);
-    -webkit-backdrop-filter:blur(18px) saturate(140%);border-radius:100px;padding:8px 8px 8px 24px;
-    transition:border-color .3s,background .3s}
-  header.scrolled .nav{background:rgba(12,15,11,.82);border-color:var(--line-2)}
-  .logo{font-family:var(--display);font-weight:800;font-size:1.2rem;letter-spacing:-.03em}
-  .logo span{color:var(--lime)}
-  nav ul{list-style:none;display:flex;gap:4px;font-size:.88rem;color:var(--grey);
-    background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:100px;padding:4px}
-  nav ul a{display:block;padding:7px 16px;border-radius:100px;transition:color .2s,background .2s}
-  nav ul a:hover{color:var(--white)}
-  nav ul a.active{background:var(--lime);color:var(--bg);font-weight:600}
-  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--bg);font-weight:600;font-size:.9rem;font-family:inherit;
-    padding:12px 14px 12px 22px;border-radius:100px;border:1px solid var(--lime);cursor:pointer;white-space:nowrap;
-    transition:transform .25s var(--ease),box-shadow .25s}
-  .btn .ar{width:24px;height:24px;border-radius:50%;background:var(--bg);color:var(--lime);display:inline-flex;align-items:center;justify-content:center;transition:transform .3s var(--ease)}
-  .btn .ar svg{width:12px;height:12px}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(198,241,53,.55)}
-  .btn:hover .ar{transform:rotate(45deg)}
-  .btn-ghost{background:transparent;border:1px solid var(--line-2);color:var(--white);padding:12px 22px}
-  .btn-ghost:hover{border-color:var(--white);box-shadow:none}
-  .nav-right{display:flex;align-items:center;gap:8px}
-  .burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);background:transparent;cursor:pointer;
-    flex-direction:column;align-items:center;justify-content:center;gap:5px}
-  .burger span{display:block;width:16px;height:2px;background:var(--white);transition:transform .25s}
-  .burger[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
-  .burger[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
-  .mnav{display:none;max-width:1200px;margin:8px auto 0;background:rgba(14,18,12,.97);border:1px solid var(--line-2);
-    border-radius:22px;padding:8px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-  .mnav a{display:block;padding:14px 18px;border-radius:14px;color:var(--white);font-size:1rem}
-  .mnav a:hover{background:rgba(255,255,255,.05)}
-  .mnav.open{display:block}
-  @media(max-width:860px){nav ul{display:none}.burger{display:flex}}
-  @media(max-width:420px){.nav-right .btn .ar{display:none}.nav-right .btn{padding:11px 18px}}
-  @media(min-width:861px){.mnav{display:none!important}}
-
-  /* ---------- shared heads ---------- */
-  .kicker{display:inline-flex;align-items:center;gap:8px;color:var(--lime);font-size:.72rem;font-weight:600;
-    letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
-  .kicker::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
-  .sec-head{max-width:680px;margin-bottom:56px}
-  .sec-head h2{font-size:clamp(2.1rem,4.6vw,3.4rem)}
-  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-  .sec-sub{color:var(--grey);margin-top:16px;font-size:1.02rem}
-
-  /* ---------- hero ---------- */
-  .glow{position:absolute;pointer-events:none;z-index:0}
-  .hero{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:72px 0 120px;min-height:calc(100vh - 90px)}
-  .hero .glow{width:900px;height:900px;right:-300px;top:-300px;background:radial-gradient(closest-side,rgba(198,241,53,.16),rgba(198,241,53,.05) 50%,transparent)}
-  @media(max-width:940px){.hero{grid-template-columns:1fr;gap:56px;min-height:0;padding:40px 0 80px}}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;color:var(--white);
-    background:rgba(255,255,255,.04);border:1px solid var(--line-2);border-radius:100px;padding:7px 16px 7px 12px;margin-bottom:28px}
-  .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--lime);position:relative}
-  .eyebrow i::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--lime);animation:ping 2s var(--ease) infinite}
-  @keyframes ping{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.8);opacity:0}}
-  .hero h1{font-size:clamp(3rem,7.4vw,6rem);line-height:.95;margin-bottom:28px;letter-spacing:-.045em}
-  .hero h1 em.s{display:table;font-size:1.02em;line-height:1;margin-top:.04em}
-  .hero p{color:var(--grey);max-width:44ch;margin-bottom:36px;font-size:1.08rem}
-  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-
-  /* stacked card slider */
-  .slider{position:relative;aspect-ratio:4/3.3;width:100%;max-width:600px;justify-self:end}
-  @media(max-width:940px){.slider{justify-self:center}}
-  .slides{position:absolute;inset:0 6% 10% 0}
-  .slide{position:absolute;inset:0;border-radius:20px;overflow:hidden;border:1px solid var(--line-2);background:var(--panel);
-    box-shadow:0 30px 60px -20px rgba(0,0,0,.7);transition:transform .9s var(--ease),opacity .9s var(--ease),filter .9s;
-    transform-origin:50% 100%;will-change:transform}
-  .slide img{width:100%;height:100%;object-fit:cover}
-  .slide[data-pos="0"]{z-index:5;transform:translate(0,0) rotate(0);opacity:1}
-  .slide[data-pos="1"]{z-index:4;transform:translate(5%,4%) rotate(4deg) scale(.96);opacity:.85;filter:brightness(.55)}
-  .slide[data-pos="2"]{z-index:3;transform:translate(9%,8%) rotate(8deg) scale(.92);opacity:.6;filter:brightness(.4)}
-  .slide[data-pos="3"],.slide[data-pos="4"]{z-index:2;transform:translate(12%,11%) rotate(11deg) scale(.88);opacity:0;pointer-events:none}
-  .slide[data-pos="out"]{z-index:6;transform:translate(-18%,4%) rotate(-10deg) scale(.95);opacity:0;pointer-events:none}
-  .slide[data-pos]:not([data-pos="0"]){pointer-events:none}
-  .dots{position:absolute;left:0;bottom:0;display:flex;gap:8px;align-items:center;
-    background:rgba(16,20,14,.8);border:1px solid var(--line-2);border-radius:100px;padding:10px 14px;backdrop-filter:blur(10px);z-index:8}
-  .dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;border:none;transition:width .3s var(--ease),background .3s}
-  .dot.active{background:var(--lime);width:22px;border-radius:4px}
-  .badge{position:absolute;right:0;bottom:4%;width:112px;height:112px;z-index:8;border-radius:50%;background:var(--lime);
-    display:flex;align-items:center;justify-content:center;color:var(--bg);box-shadow:0 20px 40px -10px rgba(198,241,53,.45);
-    transition:transform .4s var(--ease)}
-  .badge:hover{transform:scale(1.06)}
-  .badge svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 16s linear infinite}
-  .badge .mid{width:40px;height:40px;border-radius:50%;background:var(--bg);color:var(--lime);display:flex;align-items:center;justify-content:center}
-  .badge .mid svg{width:16px;height:16px;transform:rotate(90deg)}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  @media(max-width:520px){.badge{width:88px;height:88px}.badge .mid{width:32px;height:32px}}
-
-  /* ---------- services ---------- */
-  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  @media(max-width:1000px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.svc-grid{grid-template-columns:1fr}.svc-card{min-height:0}.svc-card h3{margin-top:28px}}
-  .svc-card{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);
-    border-radius:var(--radius);padding:28px 26px 30px;min-height:260px;display:flex;flex-direction:column;
-    transition:border-color .35s,transform .35s var(--ease)}
-  .svc-card::before{content:counter(svc,decimal-leading-zero);counter-increment:svc;position:absolute;top:14px;right:20px;
-    font-family:var(--display);font-weight:800;font-size:4.2rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.08);
-    transition:-webkit-text-stroke-color .35s}
-  .svc-card::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-  .svc-card:hover{border-color:var(--lime-line);transform:translateY(-4px)}
-  .svc-card:hover::before{-webkit-text-stroke-color:rgba(198,241,53,.4)}
-  .svc-card:hover::after{transform:scaleX(1)}
-  .svc-grid{counter-reset:svc}
-  .svc-icon{width:48px;height:48px;border-radius:14px;background:var(--lime-soft);border:1px solid var(--lime-line);
-    display:flex;align-items:center;justify-content:center;color:var(--lime);margin-bottom:auto}
-  .svc-icon svg{width:22px;height:22px}
-  .svc-card h3{font-size:1.25rem;margin:48px 0 10px;letter-spacing:-.02em}
-  .svc-card p{color:var(--grey);font-size:.92rem}
-
-  /* ---------- about ---------- */
-  .about-grid{display:grid;grid-template-columns:minmax(0,460px) 1fr;gap:72px;align-items:center}
-  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}}
-  .portrait-wrap{position:relative;padding:28px 0}
-  .portrait-lines{position:absolute;left:-22%;right:-22%;top:10%;width:144%;height:80%;pointer-events:none;overflow:visible}
-  .portrait{position:relative;aspect-ratio:4/4.8;border-radius:220px 220px 32px 32px;padding:2px;
-    background:linear-gradient(180deg,rgba(198,241,53,.7),rgba(198,241,53,.15))}
-  .portrait-in{position:relative;height:100%;border-radius:218px 218px 30px 30px;overflow:hidden;
-    background:radial-gradient(120% 90% at 50% 100%,rgba(198,241,53,.55),rgba(198,241,53,.08) 55%,var(--panel) 80%),var(--panel)}
-  .portrait-in::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-    background-size:40px 40px;mask-image:linear-gradient(to bottom,#000,transparent 70%);-webkit-mask-image:linear-gradient(to bottom,#000,transparent 70%)}
-  .portrait img{position:relative;width:100%;height:100%;object-fit:cover;object-position:50% 15%}
-  @media(max-width:900px){.portrait-wrap{max-width:400px;width:100%}}
-  @media(max-width:560px){.portrait{border-radius:180px 180px 28px 28px}.portrait-in{border-radius:178px 178px 26px 26px}}
-  .about-copy h2{font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:28px}
-  .about-copy p{color:var(--grey);margin-bottom:16px;max-width:60ch;font-size:1.02rem}
-  .about-copy p:first-of-type{color:var(--white);font-size:1.15rem;line-height:1.55}
-
-  /* ---------- experience ---------- */
-  .exp-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
-  @media(max-width:900px){.exp-grid{grid-template-columns:1fr;gap:48px}}
-  .exp-side{position:sticky;top:120px}
-  @media(max-width:900px){.exp-side{position:static}}
-  .exp-side .sec-head{margin-bottom:40px}
-  .timeline{position:relative;padding-left:40px}
-  .timeline::before{content:'';position:absolute;left:11px;top:10px;bottom:10px;width:1px;background:linear-gradient(var(--lime-line),var(--line) 30%,var(--line))}
-  .tl-item{position:relative;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);
-    padding:26px 28px;margin-bottom:16px;transition:border-color .3s}
-  .tl-item:hover{border-color:var(--line-2)}
-  .tl-item::before{content:'';position:absolute;left:-35px;top:30px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--grey-2)}
-  .timeline > .tl-item:first-child::before{background:var(--lime);border-color:var(--lime);box-shadow:0 0 0 5px rgba(198,241,53,.15),0 0 20px var(--lime)}
-  .tl-top{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:12px}
-  .tl-item .role{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
-  .tl-item .dates{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lime);
-    background:var(--lime-soft);border:1px solid var(--lime-line);border-radius:100px;padding:4px 11px}
-  .tl-item .company{color:var(--white);font-size:.95rem;margin-top:6px;font-weight:500}
-  .tl-item .org{color:var(--grey-2);font-size:.85rem}
-  .tl-item ul{margin-top:16px;list-style:none;color:var(--grey);font-size:.93rem;border-top:1px solid var(--line);padding-top:16px}
-  .tl-item li{margin-bottom:8px;padding-left:20px;position:relative}
-  .tl-item li::before{content:'';position:absolute;left:2px;top:.72em;width:8px;height:1px;background:var(--lime)}
-  .exp-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
-  .exp-more > div{overflow:hidden;margin-left:-44px;padding-left:44px}
-  .exp-more.open{grid-template-rows:1fr}
-  .more-btn{margin:4px 0 0 40px;background:transparent;border:1px solid var(--line-2);color:var(--white);font:600 .86rem var(--sans);
-    padding:11px 20px;border-radius:100px;cursor:pointer;display:inline-flex;gap:10px;align-items:center;transition:border-color .2s,color .2s}
-  .more-btn:hover{border-color:var(--lime);color:var(--lime)}
-  .more-btn .chev{transition:transform .3s;display:inline-block}
-  .more-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
-  .tools h3{font-family:var(--sans);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey-2);font-weight:600;margin:0 0 14px}
-  .tools h3:not(:first-child){margin-top:28px}
-  .tool-grid{display:flex;flex-wrap:wrap;gap:8px}
-  .tool{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.03);border:1px solid var(--line);
-    border-radius:100px;padding:6px 16px 6px 6px;font-size:.86rem;color:var(--white);transition:border-color .2s,transform .2s}
-  .tool:hover{border-color:var(--line-2);transform:translateY(-2px)}
-  .tool i{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    font-family:var(--display);font-weight:800;font-size:.68rem;font-style:normal;color:#0B0F0B;flex-shrink:0}
-
-  /* ---------- portfolio ---------- */
-  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 auto 48px;justify-content:center;max-width:980px}
-  .filter{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:100px;font-family:inherit;
-    padding:9px 10px 9px 16px;font-size:.85rem;color:var(--grey);cursor:pointer;display:inline-flex;align-items:center;gap:8px;
-    transition:color .2s,border-color .2s,background .2s}
-  .filter span{font-size:.7rem;font-weight:600;min-width:24px;height:22px;padding:0 7px;border-radius:100px;background:rgba(255,255,255,.07);
-    display:inline-flex;align-items:center;justify-content:center;color:var(--white)}
-  .filter:hover{color:var(--white);border-color:var(--line-2)}
-  .filter.active{background:var(--lime);color:var(--bg);border-color:var(--lime);font-weight:600}
-  .filter.active span{background:var(--bg);color:var(--lime)}
-
-  .port-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:start}
-  .port-card{grid-column:span var(--span,4);border-radius:20px;overflow:hidden;border:1px solid var(--line);
-    background:var(--panel);display:block;padding:8px;transition:transform .45s var(--ease),border-color .3s,background .3s;
-    animation:cardIn .6s var(--ease) both}
-  @keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-  @media(max-width:860px){.port-card{grid-column:span 6}.port-card[style*="--span:12"]{grid-column:span 12}}
-  @media(max-width:560px){.port-card{grid-column:span 12}}
-  .port-card:hover{transform:translateY(-5px);border-color:var(--lime-line);background:var(--panel-2)}
-  .port-card .thumb{overflow:hidden;position:relative;background:#0c100b;border-radius:14px}
-  .port-card .thumb img{width:100%;height:auto;transition:transform .8s var(--ease)}
-  .port-card:hover .thumb img{transform:scale(1.04)}
-  .tag{position:absolute;top:12px;left:12px;background:rgba(10,13,9,.82);color:var(--white);font-size:.66rem;font-weight:600;
-    letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:100px;opacity:0;transform:translateY(-4px);
-    transition:opacity .3s,transform .3s var(--ease);backdrop-filter:blur(8px);border:1px solid var(--line-2)}
-  .port-card:hover .tag,.port-card:focus-visible .tag{opacity:1;transform:none}
-  .port-info{padding:16px 56px 12px 12px;position:relative;min-height:74px}
-  .port-info::after{content:'';position:absolute;right:10px;top:50%;width:36px;height:36px;margin-top:-16px;border-radius:50%;
-    border:1px solid var(--line-2);transition:background .3s,border-color .3s,transform .4s var(--ease);
-    background:no-repeat center/13px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F2F4EC' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E")}
-  .port-card:hover .port-info::after{background-color:var(--lime);border-color:var(--lime);transform:rotate(45deg);
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A0D09' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E")}
-  .port-info .cat{color:var(--lime);font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
-  .port-info h3{font-size:1rem;font-weight:600;font-family:var(--display);letter-spacing:-.01em;line-height:1.3}
-  .port-info .proj{color:var(--grey);font-size:.84rem;margin-top:2px}
-  .hidden{display:none!important}
-
-  /* ---------- lightbox ---------- */
-  .lb{position:fixed;inset:0;z-index:100;background:rgba(6,8,5,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-    display:none;align-items:center;justify-content:center;padding:72px 16px}
-  .lb.open{display:flex;animation:fade .3s ease}
-  @keyframes fade{from{opacity:0}}
-  .lb img{max-width:min(1200px,100%);max-height:100%;object-fit:contain;border-radius:14px;box-shadow:0 40px 80px -20px #000}
-  .lb button{position:absolute;background:rgba(255,255,255,.06);border:1px solid var(--line-2);color:var(--white);
-    width:48px;height:48px;border-radius:50%;font-size:1.4rem;cursor:pointer;line-height:1;transition:background .2s,color .2s}
-  .lb button:hover{background:var(--lime);color:var(--bg);border-color:var(--lime)}
-  .lb .lb-close{top:16px;right:16px}
-  .lb .lb-prev{left:16px;top:50%;transform:translateY(-50%)}
-  .lb .lb-next{right:16px;top:50%;transform:translateY(-50%)}
-  .lb-cap{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:var(--grey);font-size:.85rem;white-space:pre}
-
-  /* ---------- CTA ---------- */
-  .cta{position:relative;overflow:hidden;border:1px solid var(--line-2);border-radius:36px;padding:110px 40px;text-align:center;
-    background:radial-gradient(70% 90% at 50% 120%,rgba(198,241,53,.28),transparent 70%),linear-gradient(180deg,var(--panel-2),var(--panel))}
-  .cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-    background-size:56px 56px;mask-image:radial-gradient(60% 70% at 50% 50%,#000,transparent);-webkit-mask-image:radial-gradient(60% 70% at 50% 50%,#000,transparent)}
-  .cta > *{position:relative}
-  @media(max-width:600px){.cta{padding:72px 22px;border-radius:28px}}
-  .cta h2{font-size:clamp(2.4rem,6vw,4.6rem);margin-bottom:22px;letter-spacing:-.045em}
-  .cta p{color:var(--grey);max-width:48ch;margin:0 auto 20px;font-size:1.05rem}
-  .cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
-  .btn .ic{width:16px;height:16px}
-  .btn-ghost.copied{border-color:var(--lime);color:var(--lime)}
-
-  /* ---------- footer ---------- */
-  footer{position:relative;overflow:hidden;border-top:1px solid var(--line);padding:40px 0;color:var(--grey);font-size:.86rem}
-  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
-  .socials{display:flex;gap:8px}
-  .socials a{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.03);border:1px solid var(--line-2);
-    display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:700;color:var(--white);transition:all .25s var(--ease)}
-  .socials a:hover{color:var(--bg);background:var(--lime);border-color:var(--lime);transform:translateY(-3px)}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -296,94 +19,69 @@
 <header>
   <div class="nav">
     <a class="logo" href="index.html">Mae<span>.</span></a>
-    <nav><ul>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#experience">Work Experience</a></li>
-      <li><a href="index.html#work">Portfolio</a></li>
-    </ul></nav>
+    <nav aria-label="Primary"><ul><li><a href="#about">About</a></li><li><a href="#work">Services</a></li><li><a href="#experience">Work Experience</a></li><li><a href="work.html">Work Samples</a></li></ul></nav>
     <div class="nav-right">
-      <a class="btn" href="mailto:norleenvillareal@gmail.com">Contact Me <span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+      <a class="btn" href="#contact">Contact <span class="ar ne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
     </div>
   </div>
-  <nav class="mnav" id="mnav" aria-label="Mobile">
-    <a href="index.html#about">About</a>
-    <a href="index.html#services">Services</a>
-    <a href="index.html#experience">Work Experience</a>
-    <a href="index.html#work">Portfolio</a>
-  </nav>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><a href="#about">About</a><a href="#work">Services</a><a href="#experience">Work Experience</a><a href="work.html">Work Samples</a><a href="#contact">Contact</a></nav>
 </header>
 
 <main class="wrap">
 
   <section class="hero">
-    <div class="glow"></div>
-    <div class="rv">
-      <div class="eyebrow"><i></i>Hi, I'm Mae Villareal</div>
-      <h1><em class="s">Graphic Designer</em></h1>
-      <p>I design brand identities, pitch decks, brochures, flyers, social media graphics and marketing collateral for businesses and brands.</p>
-      <div class="hero-actions">
-        <a class="btn" href="#work">View Work Samples <span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-        <a class="btn btn-ghost" href="files/pdf/CV%20-%20Mae%20Villareal%20-%202026%20-%208.pdf" target="_blank" rel="noopener">Download CV</a>
-      </div>
+    <div class="glow" aria-hidden="true"></div><div class="grid-bg" aria-hidden="true"></div>
+    <div class="eyebrow rv"><i></i>Hi, I'm Mae Villareal</div>
+    <h1 class="rv">Graphic<br><em class="s">Designer</em></h1>
+    <p class="rv">Logos, brand identities, presentations, print and digital design for businesses and brands.</p>
+    <div class="hero-actions rv">
+      <a class="btn" href="#work">View My Work <span class="ar se"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 8v9H8"/></svg></span></a>
+      <a class="btn btn-ghost" href="mailto:norleenvillareal@gmail.com">Contact Me <span class="ar ne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
     </div>
-    <div class="slider rv" id="slider">
-      <div class="slides" id="slides">
-        <a class="slide" href="projects/pitch-deck/dental-capital.html" target="_blank" rel="noopener"><img src="https://ucarecdn.com/488f6f1a-225d-4ae6-bc46-5e3820805538/DentalCapitalThumbnail.jpg" alt="Dental Capital pitch deck"></a>
-        <a class="slide" href="files/pdf/458%20W%20Arenas%20Rd.pdf" target="_blank" rel="noopener"><img src="https://ucarecdn.com/32997643-5a9d-4ae6-82c6-37fd6ce11dae/458WArenasRdThumbnail.jpg" alt="458 W Arenas Rd offering memorandum"></a>
-        <a class="slide" href="files/pdf/Lutz-OM.pdf" target="_blank" rel="noopener"><img src="https://ucarecdn.com/3872a8cc-e95d-40bf-a151-2f445c320d0d/LutzOMThumbnail.jpg" alt="Lutz offering memorandum"></a>
-        <a class="slide" href="https://ucarecdn.com/a0eaf277-0eea-4569-ad34-5b60dbbb9eca/2550BroadStThumbnail.jpg" data-lightbox="hero" data-caption="2550 Broad St property development postcard"><img src="https://ucarecdn.com/a0eaf277-0eea-4569-ad34-5b60dbbb9eca/2550BroadStThumbnail.jpg" alt="2550 Broad St property development postcard" loading="lazy"></a>
-        <a class="slide" href="https://ucarecdn.com/a17bc35d-62ba-4f0b-b626-bb39c13dc17a/Hwy114RegionalMaptimg.jpg" data-lightbox="hero" data-caption="Hwy 114 regional map"><img src="https://ucarecdn.com/a17bc35d-62ba-4f0b-b626-bb39c13dc17a/Hwy114RegionalMaptimg.jpg" alt="Hwy 114 regional map" loading="lazy"></a>
-      </div>
-      <div class="dots" id="dots"></div>
-      <a class="badge" href="#work" aria-label="View Work Samples">
-        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
-          <text font-family="Inter Tight, Inter, sans-serif" font-size="10.4" font-weight="700" letter-spacing="2.2" fill="#0A0D09"><textPath href="#circ" textLength="272" lengthAdjust="spacing">VIEW WORK SAMPLES • VIEW WORK SAMPLES •</textPath></text></svg>
-        <span class="mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </section>
+
+  <section id="work">
+    <div class="sec-head split rv">
+      <div><div class="kicker">Services</div><h2>What I <em class="s">design</em></h2></div>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-card rv" href="services/logo-design.html">
+        <div class="thumb"><img src="images/logos/carmate.jpg" alt="Logo Design sample" loading="lazy"></div>
+        <div class="body"><h3>Logo Design</h3><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
       </a>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="sec-head rv"><div class="kicker">Services</div><h2>What I <em class="s">do</em></h2></div>
-    <div class="svc-grid">
-      <div class="svc-card rv">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div>
-        <h3>Brand Identity</h3><p>Logos, business cards, letterheads &amp; cohesive brand systems.</p>
-      </div>
-      <div class="svc-card rv">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></div>
-        <h3>Print &amp; Marketing</h3><p>Brochures, flyers, postcards, reports, signage &amp; sales documents.</p>
-      </div>
-      <div class="svc-card rv">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-        <h3>Digital &amp; Social</h3><p>Social media posts, email campaigns, web graphics &amp; maps.</p>
-      </div>
-      <div class="svc-card rv">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
-        <h3>Presentations</h3><p>Pitch decks, investor materials &amp; one-pagers that tell a story.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="about-grid">
-      <div class="portrait-wrap rv">
-        <svg class="portrait-lines" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true" fill="none">
-          <defs><linearGradient id="pl" x1="0" x2="1"><stop offset="0" stop-color="#C6F135" stop-opacity="0"/><stop offset=".3" stop-color="#C6F135" stop-opacity=".55"/><stop offset=".7" stop-color="#C6F135" stop-opacity=".45"/><stop offset="1" stop-color="#C6F135" stop-opacity="0"/></linearGradient></defs>
-          <path d="M0 330 C 90 300, 160 310, 250 360 S 470 250, 600 90" stroke="url(#pl)" stroke-width="2"/>
-          <path d="M0 250 C 120 200, 200 260, 300 230 S 500 120, 600 150" stroke="url(#pl)" stroke-width="1.2" opacity=".5"/>
-        </svg>
-        <div class="portrait"><div class="portrait-in"><img src="https://ucarecdn.com/cdb8fdf8-52f6-4ccc-bad9-b5176f067d93/maee.png" alt="Mae Villareal"></div></div>
-      </div>
-      <div class="about-copy rv">
-        <div class="kicker">About</div>
-        <h2>Hi, I'm <em class="s">Mae</em></h2>
-        <p>Graphic and web designer with over ten years of experience across branding, print, digital and presentation design — delivering minimalist, visually striking work.</p>
-        <p>My design philosophy centers on simplicity and clean aesthetics: less is more, and effective communication comes through thoughtful design. I take a fresh approach to each project, making sure my clients' vision is understood and delivered.</p>
-        <p>Outside of designing, I enjoy the outdoors, music, and reading — a good hike or a quiet walk is usually where the next idea shows up.</p>
-      </div>
+      <a class="cat-card rv" href="services/brand-identity.html">
+        <div class="thumb"><img src="images/logos/gonzalo-law-firm-stationery.jpg" alt="Brand Identity &amp; Stationery sample" loading="lazy"></div>
+        <div class="body"><h3>Brand Identity &amp; Stationery</h3><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="cat-card rv" href="services/presentation-design.html">
+        <div class="thumb"><img src="https://ucarecdn.com/b9498fa8-6b2a-4049-b9a4-e6bf4302fd53/VertaagThumbnail.jpg" alt="Presentation Design sample" loading="lazy"></div>
+        <div class="body"><h3>Presentation Design</h3><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="cat-card rv" href="services/print-design.html">
+        <div class="thumb"><img src="https://ucarecdn.com/2660f7df-2411-47fb-a17c-50f34c6ec5a9/RealifeREGCompanyBrochureThumbnail.jpg" alt="Print Design sample" loading="lazy"></div>
+        <div class="body"><h3>Print Design</h3><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="cat-card rv" href="services/social-media-design.html">
+        <div class="thumb"><img src="https://ucarecdn.com/93e9b947-cb77-4d5d-8d18-743a465fc550/2LinkedinpostsEngleREThumbnail.jpg" alt="Social Media Design sample" loading="lazy"></div>
+        <div class="body"><h3>Social Media Design</h3><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="cat-card rv" href="services/email-design.html">
+        <div class="thumb"><img src="https://ucarecdn.com/d17a5e6f-bef3-451f-81bc-9e21f1a71fec/BerubeCoInceblast.jpg" alt="Email &amp; Newsletter Design sample" loading="lazy"></div>
+        <div class="body"><h3>Email &amp; Newsletter Design</h3><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="cat-card rv" href="services/report-design.html">
+        <div class="thumb"><img src="https://ucarecdn.com/2110a987-bf8c-4361-b21b-8bf8d561f814/ccquarterlyreporttimg.jpg" alt="Report Design sample" loading="lazy"></div>
+        <div class="body"><h3>Report Design</h3><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="cat-card rv" href="services/editorial-layout.html">
+        <div class="thumb"><img src="https://ucarecdn.com/a7ce7db5-0bc3-410a-9e1c-11ff69e31e17/21CommercialThumbnail.jpg" alt="Editorial &amp; Layout Design sample" loading="lazy"></div>
+        <div class="body"><h3>Editorial &amp; Layout Design</h3><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="cat-card rv" href="services/maps-infographics.html">
+        <div class="thumb"><img src="https://ucarecdn.com/a17bc35d-62ba-4f0b-b626-bb39c13dc17a/Hwy114RegionalMaptimg.jpg" alt="Maps &amp; Infographics sample" loading="lazy"></div>
+        <div class="body"><h3>Maps &amp; Infographics</h3><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
     </div>
   </section>
 
@@ -391,6 +89,9 @@
     <div class="exp-grid">
       <div class="exp-side rv">
         <div class="sec-head"><div class="kicker">Experience</div><h2>Work <em class="s">experience</em></h2></div>
+        <div class="cv">
+          <a class="btn" href="files/pdf/CV%20-%20Mae%20Villareal%20-%202026%20-%208.pdf" target="_blank" rel="noopener">Download CV <span class="ar se"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></a>
+        </div>
         <div class="tools">
           <h3>Design tools</h3>
           <div class="tool-grid">
@@ -415,6 +116,7 @@
           <div class="company">Built to Suit Brands</div><div class="org">PO Box 1569, Winter Park, FL 32790</div>
           <ul><li>Develop creative advertising content for various media, including brochure, flyer, business card, letterhead and offering memorandum, while ensuring brand awareness of the target audience/market.</li><li>Assisted with email management and general administrative tasks.</li><li>Organized and cleaned up digital files and folders for file management.</li><li>Provided assistance and support with day-to-day business tasks.</li></ul>
         </div>
+          <div class="exp-more" id="expMore"><div>
         <div class="tl-item">
           <div class="tl-top"><div class="role">Graphic / Web Designer</div><div class="dates">January 2019 – June 2022</div></div>
           <div class="company">TJ Walton Marketing</div>
@@ -430,102 +132,36 @@
           <div class="company">Personiv</div><div class="org">Northgate Cyberzone, Alabang</div>
           <ul><li>Designed, coded, and modified websites according to a client&#x27;s specifications, from layout to function.</li><li>Created graphic designs such as logos, CTAs, banners, and buttons for websites.</li><li>Worked with the QA Department on a customized testing plan.</li></ul>
         </div>
+          </div></div>
         </div>
+        <button class="more-btn" id="expBtn" aria-expanded="false" aria-controls="expMore"><span class="lbl">Show earlier experience</span> <span class="chev">&#9662;</span></button>
       </div>
     </div>
   </section>
 
-  <section id="work">
-    <div class="sec-head center rv"><div class="kicker">Portfolio</div><h2>Work <em class="s">samples</em></h2>
-      <p class="sec-sub">Brand identity, print &amp; marketing, digital &amp; social, email newsletter and presentation work for businesses and brands.</p></div>
-    <div class="filters rv" id="filters">
-      <button class="filter active" data-cat="all">All <span>68</span></button>
-      <button class="filter" data-cat="brand">Brand Identity <span>3</span></button>
-      <button class="filter" data-cat="print">Print &amp; Marketing <span>33</span></button>
-      <button class="filter" data-cat="digital">Digital &amp; Social <span>22</span></button>
-      <button class="filter" data-cat="email">Email Newsletter <span>3</span></button>
-      <button class="filter" data-cat="presentation">Presentations <span>7</span></button>
-    </div>
-    <div class="port-grid" id="portGrid">
-      <a class="port-card" data-cat="brand" style="--span:4" href="projects/branding/cw-homes.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/c422226a-9f4f-45d8-a79f-0558e91040b7/CWThumbnail.jpg" alt="Business Card &amp; Letterhead — CW Homes" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Brand Identity</div><h3>Business Card &amp; Letterhead</h3><p class="proj">CW Homes</p></div></a>
-      <a class="port-card" data-cat="brand" style="--span:4" href="https://ucarecdn.com/931db1ec-0f6a-4bc8-8273-feb1eed5895e/VinsonRealtyPartnersThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/931db1ec-0f6a-4bc8-8273-feb1eed5895e/VinsonRealtyPartnersThumbnail.jpg" alt="Corporate Identity — Vinson Realty Partners" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Brand Identity</div><h3>Corporate Identity</h3><p class="proj">Vinson Realty Partners</p></div></a>
-      <a class="port-card" data-cat="brand" style="--span:4" href="https://ucarecdn.com/b24baa22-d91d-432b-8206-ce3df5ed8b50/VinsonRealtyPartnersLogoThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/b24baa22-d91d-432b-8206-ce3df5ed8b50/VinsonRealtyPartnersLogoThumbnail.jpg" alt="Logo Design — Vinson Realty Partners" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Brand Identity</div><h3>Logo Design</h3><p class="proj">Vinson Realty Partners</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="https://ucarecdn.com/3bb835ff-8a89-4d70-885b-963e0a25d31d/SFStimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/3bb835ff-8a89-4d70-885b-963e0a25d31d/SFStimg.jpg" alt="Property Flyer — SFS" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Property Flyer</h3><p class="proj">SFS</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="https://ucarecdn.com/7d335ea1-1a6e-4c4b-86e7-3bb617dcf88f/1500Pinecrofttimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/7d335ea1-1a6e-4c4b-86e7-3bb617dcf88f/1500Pinecrofttimg.jpg" alt="Property Flyer — 1500 Pinecroft" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Property Flyer</h3><p class="proj">1500 Pinecroft</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="projects/flyer/windermere.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/60c0988e-2790-43ea-9fb5-2058ab98b88a/JCGGlobalFlyerThumbnail.jpg" alt="Property Flyer — Windermere" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Property Flyer</h3><p class="proj">Windermere</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:5" href="files/pdf/Vantix%20Medical%20Flyer.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/e57bd0d7-01ec-4a5f-9f60-1b2f4ff460f3/vantixmedicaltimg.jpg" alt="Medical Office Flyer — Vantix Medical" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Medical Office Flyer</h3><p class="proj">Vantix Medical</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:7" href="files/pdf/829-837%20S%201st%20Street%20Flyer.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/84134916-b016-4c3f-80e9-86c35cb679af/829837timg.jpg" alt="Property Flyer — 829–837 S 1st Street" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Property Flyer</h3><p class="proj">829–837 S 1st Street</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="projects/flyer/watkins.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/5c673a07-45be-480d-b604-6c1b544c7209/WatkinsPlazaFlyerThumbnail.jpg" alt="Property Flyer — Watkins Plaza" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Property Flyer</h3><p class="proj">Watkins Plaza</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="https://ucarecdn.com/f10876ed-fb0c-439a-9a1b-c46dfb7ac16e/Vantixtimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/f10876ed-fb0c-439a-9a1b-c46dfb7ac16e/Vantixtimg.jpg" alt="Flyer — Vantix" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Flyer</h3><p class="proj">Vantix</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="files/pdf/Agave%20Houston%20Portfolio.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/501f5507-6428-40fc-a4bf-09f167684a78/AgaveHoustonPortfolioThumbnail.jpg" alt="Portfolio Brochure — Agave Houston" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Portfolio Brochure</h3><p class="proj">Agave Houston</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="files/pdf/4001%20Old%20Hwy%20Flyer.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/667d8b8c-c8b8-426d-9b46-1389a4960769/4001timg.jpg" alt="Property Flyer — 4001 Old Hwy" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Property Flyer</h3><p class="proj">4001 Old Hwy</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="files/pdf/Global%20Prospectus%20flyer.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/9d820083-4cc8-42a7-be58-183a4af3c2d7/GlobalProspectustimg.jpg" alt="Prospectus Flyer — Global Prospectus" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Prospectus Flyer</h3><p class="proj">Global Prospectus</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="files/pdf/Stellar%20Company%20Brochure.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/e0efaa76-486a-4608-8ad4-2702502c4750/stellarcompanybrochuretimg.jpg" alt="Company Brochure — Stellar" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Company Brochure</h3><p class="proj">Stellar</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="projects/brochure/realife-company.html" target="_blank" rel="noopener"><div class="thumb"><img src="images/featured/Realife-REG-Company-Brochure-Thumbnail.jpg" alt="Company Brochure — Realife REG" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Company Brochure</h3><p class="proj">Realife REG</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="https://ucarecdn.com/dcc69791-3e13-468f-9eb1-139cdc2da42b/panoramicfundoptimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/dcc69791-3e13-468f-9eb1-139cdc2da42b/panoramicfundoptimg.jpg" alt="Investment One Pager — Panoramic Fund" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Investment One Pager</h3><p class="proj">Panoramic Fund</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="https://ucarecdn.com/2110a987-bf8c-4361-b21b-8bf8d561f814/ccquarterlyreporttimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/2110a987-bf8c-4361-b21b-8bf8d561f814/ccquarterlyreporttimg.jpg" alt="Quarterly Report — City Commercial" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Quarterly Report</h3><p class="proj">City Commercial</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="https://ucarecdn.com/a0eaf277-0eea-4569-ad34-5b60dbbb9eca/2550BroadStThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/a0eaf277-0eea-4569-ad34-5b60dbbb9eca/2550BroadStThumbnail.jpg" alt="Property Development Postcard — 2550 Broad St" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Property Development Postcard</h3><p class="proj">2550 Broad St</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="https://ucarecdn.com/353a4ee1-bf8d-4062-a203-a0bfa523310c/ARCMedicalOnePagerThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/353a4ee1-bf8d-4062-a203-a0bfa523310c/ARCMedicalOnePagerThumbnail.jpg" alt="Investment One Pager — ARC Medical" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Investment One Pager</h3><p class="proj">ARC Medical</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="https://ucarecdn.com/dbd9a7ba-1e7e-4edb-bc65-96bf7f38fd89/WhitneyMarketReporttimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/dbd9a7ba-1e7e-4edb-bc65-96bf7f38fd89/WhitneyMarketReporttimg.jpg" alt="Market Report — Whitney" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Market Report</h3><p class="proj">Whitney</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="https://ucarecdn.com/d1ea102f-ec2f-4eee-a36a-ff1481b12d71/Oran1pagertimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/d1ea102f-ec2f-4eee-a36a-ff1481b12d71/Oran1pagertimg.jpg" alt="Investment One Pager — Oran Capital" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Investment One Pager</h3><p class="proj">Oran Capital</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="https://ucarecdn.com/717f68b8-1336-48f7-86b2-634575869951/ThankYouPostcardtimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/717f68b8-1336-48f7-86b2-634575869951/ThankYouPostcardtimg.jpg" alt="Thank You Postcard — Platinum Access" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Thank You Postcard</h3><p class="proj">Platinum Access</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="https://ucarecdn.com/42556653-44c0-4d23-bf47-06b124fcd52a/1thingpostcardtimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/42556653-44c0-4d23-bf47-06b124fcd52a/1thingpostcardtimg.jpg" alt="Marketing Postcard — City Commercial" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Marketing Postcard</h3><p class="proj">City Commercial</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="https://ucarecdn.com/6f1cf31c-9d31-41ce-a0d4-14cd3e9d190e/VantixProposalCovertimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/6f1cf31c-9d31-41ce-a0d4-14cd3e9d190e/VantixProposalCovertimg.jpg" alt="Proposal Cover Page — Vantix" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Proposal Cover Page</h3><p class="proj">Vantix</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="https://ucarecdn.com/3f96904f-44da-4f9b-a8a8-439a5b58e968/signtimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/3f96904f-44da-4f9b-a8a8-439a5b58e968/signtimg.jpg" alt="Signage — Pantheon" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Signage</h3><p class="proj">Pantheon</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="files/pdf/Singer%20Island%20OM.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/f854dc1b-fb7f-4ae9-92df-4313d3c93fed/SingerIslandThumbnail.jpg" alt="Office OM — Singer Island" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Office OM</h3><p class="proj">Singer Island</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="files/pdf/458%20W%20Arenas%20Rd.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/32997643-5a9d-4ae6-82c6-37fd6ce11dae/458WArenasRdThumbnail.jpg" alt="Multi-Family OM — 458 W Arenas Rd" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Multi-Family OM</h3><p class="proj">458 W Arenas Rd</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="files/pdf/St%20Elmo%20OM.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/81725068-13aa-45e0-8668-0e4118308fde/StElmoThumbnail.jpg" alt="Mixed-Use Development OM — St Elmo Public Market &amp; Land" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Mixed-Use Development OM</h3><p class="proj">St Elmo Public Market &amp; Land</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="files/pdf/Stonewall%20Square%20OM.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/692a63fd-9470-4fb9-8581-bf4380264101/StonewallSquareThumbnail.jpg" alt="Retail OM — Stonewall Square" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Retail OM</h3><p class="proj">Stonewall Square</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:5" href="files/pdf/Lutz-OM.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/3872a8cc-e95d-40bf-a151-2f445c320d0d/LutzOMThumbnail.jpg" alt="Multi-Family OM — Lutz" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Multi-Family OM</h3><p class="proj">Lutz</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:7" href="files/pdf/Lake%20Las%20Vegas%20OM.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/16c2c938-8977-41ba-9d51-2e19d63de584/LakeLasVegasThumbnail.jpg" alt="Land Development OM — Lake Las Vegas" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Land Development OM</h3><p class="proj">Lake Las Vegas</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="files/pdf/Canfield%20Industrial%20Park%20OM.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/4d01603a-526b-4612-9ff9-dde26966f341/BoosalisThumbnail.jpg" alt="Industrial OM — Canfield Industrial Park" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Industrial OM</h3><p class="proj">Canfield Industrial Park</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:6" href="files/pdf/Elm%20Villas%20OM.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/16d5e3a4-9601-40f6-8fac-b866fe68df4f/ElmVillasThumbnail.jpg" alt="Multi-Family OM — Elm Villas" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Multi-Family OM</h3><p class="proj">Elm Villas</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="files/pdf/5441%20Blackwelder%20OM.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/656afb7c-1991-40f4-bf18-a666b0a0bde2/5441BlackwelderThumbnail.jpg" alt="Single-Family Development OM — 5441 Blackwelder" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Single-Family Development OM</h3><p class="proj">5441 Blackwelder</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="files/pdf/DPI%20OM.pdf" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/c867b754-5520-40e7-ad95-f1929fc1fad0/DPIThumbnail.jpg" alt="Office OM — DPI" loading="lazy"><span class="tag">Open PDF</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Office OM</h3><p class="proj">DPI</p></div></a>
-      <a class="port-card" data-cat="print" style="--span:4" href="projects/om/21-commercial-om.html" target="_blank" rel="noopener"><div class="thumb"><img src="images/featured/21-Commercial-Thumbnail.jpg" alt="Commercial OM — 21 Commercial" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Print &amp; Marketing</div><h3>Commercial OM</h3><p class="proj">21 Commercial</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/49ecf0e2-56dd-44a7-b08d-141b1dd92b97/281HighlandAveThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/49ecf0e2-56dd-44a7-b08d-141b1dd92b97/281HighlandAveThumbnail.jpg" alt="Listing Post — 281 Highland Ave" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Listing Post</h3><p class="proj">281 Highland Ave</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/5227f301-1464-4a0c-b351-7f3cdbe4657d/425PageMillRdThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/5227f301-1464-4a0c-b351-7f3cdbe4657d/425PageMillRdThumbnail.jpg" alt="Listing Post — 425 Page Mill Rd" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Listing Post</h3><p class="proj">425 Page Mill Rd</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/9feb47d3-3d1a-4a92-9a14-8e09451639c4/Cubework10100WesternAveSMPThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/9feb47d3-3d1a-4a92-9a14-8e09451639c4/Cubework10100WesternAveSMPThumbnail.jpg" alt="Listing Post — Cubework · S Western Ave" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Listing Post</h3><p class="proj">Cubework · S Western Ave</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/c1eefee5-2a1a-4511-a45f-26894e19a878/CenturionTowerThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/c1eefee5-2a1a-4511-a45f-26894e19a878/CenturionTowerThumbnail.jpg" alt="Listing Post — Centurion Tower" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Listing Post</h3><p class="proj">Centurion Tower</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/6fa4c674-b762-4fc8-bb38-a749a3d10184/50MainStreetSMPThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/6fa4c674-b762-4fc8-bb38-a749a3d10184/50MainStreetSMPThumbnail.jpg" alt="Listing Post — 50 Main Street" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Listing Post</h3><p class="proj">50 Main Street</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/93e9b947-cb77-4d5d-8d18-743a465fc550/2LinkedinpostsEngleREThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/93e9b947-cb77-4d5d-8d18-743a465fc550/2LinkedinpostsEngleREThumbnail.jpg" alt="LinkedIn Posts — Engle Real Estate" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>LinkedIn Posts</h3><p class="proj">Engle Real Estate</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/af44dd73-bf76-4ebc-81ff-5697e076787c/203205RidgelyAvePressReleaseThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/af44dd73-bf76-4ebc-81ff-5697e076787c/203205RidgelyAvePressReleaseThumbnail.jpg" alt="Press Release Post — 203–205 Ridgely Ave" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Press Release Post</h3><p class="proj">203–205 Ridgely Ave</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/9a1a46dd-7a64-45b5-9dc1-32d172c0af2f/5083WindermereBlvdThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/9a1a46dd-7a64-45b5-9dc1-32d172c0af2f/5083WindermereBlvdThumbnail.jpg" alt="Listing Post — 5083 Windermere Blvd" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Listing Post</h3><p class="proj">5083 Windermere Blvd</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/0a74deae-17bd-4cbb-8325-582cc02a1881/AlexDelannoy4223SPipkinRdSMPThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/0a74deae-17bd-4cbb-8325-582cc02a1881/AlexDelannoy4223SPipkinRdSMPThumbnail.jpg" alt="Open House Post — 4223 S Pipkin Rd" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Open House Post</h3><p class="proj">4223 S Pipkin Rd</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/6e45bd0e-b413-4dc3-8c5f-691b88ec7b04/1560OrangeAveThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/6e45bd0e-b413-4dc3-8c5f-691b88ec7b04/1560OrangeAveThumbnail.jpg" alt="Listing Post — 1560 Orange Ave" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Listing Post</h3><p class="proj">1560 Orange Ave</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/b638e074-0af1-4e14-8e3c-775d404ce715/NavigatingSaleLeasebackThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/b638e074-0af1-4e14-8e3c-775d404ce715/NavigatingSaleLeasebackThumbnail.jpg" alt="Educational Post — Navigating Sale-Leaseback" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Educational Post</h3><p class="proj">Navigating Sale-Leaseback</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:4" href="https://ucarecdn.com/87587529-b1f7-4dd4-89a7-c0cfc1150a09/TechVillageStudentLivingThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/87587529-b1f7-4dd4-89a7-c0cfc1150a09/TechVillageStudentLivingThumbnail.jpg" alt="Listing Post — Tech Village Student Living" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Listing Post</h3><p class="proj">Tech Village Student Living</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/8335156c-9112-436a-a639-00c8bd67d3b8/AugustaThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/8335156c-9112-436a-a639-00c8bd67d3b8/AugustaThumbnail.jpg" alt="Employer Map — Augusta" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Employer Map</h3><p class="proj">Augusta</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/a17bc35d-62ba-4f0b-b626-bb39c13dc17a/Hwy114RegionalMaptimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/a17bc35d-62ba-4f0b-b626-bb39c13dc17a/Hwy114RegionalMaptimg.jpg" alt="Regional Map — Hwy 114" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Regional Map</h3><p class="proj">Hwy 114</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/f61e3e6b-491c-429d-a969-da8b63ce97b0/Map1Thumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/f61e3e6b-491c-429d-a969-da8b63ce97b0/Map1Thumbnail.jpg" alt="Retail Map" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Retail Map</h3></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/ccbd2a3d-2bae-4767-a86a-ad5338a5c1da/LutzRetailMapThumbnail.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/ccbd2a3d-2bae-4767-a86a-ad5338a5c1da/LutzRetailMapThumbnail.jpg" alt="Retail Map — Lutz" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Retail Map</h3><p class="proj">Lutz</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/22d4706b-32fe-4e73-b244-8b15479217c3/NAIGlobalOfficesmaptimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/22d4706b-32fe-4e73-b244-8b15479217c3/NAIGlobalOfficesmaptimg.jpg" alt="Office Locations Map — NAI Global" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Office Locations Map</h3><p class="proj">NAI Global</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/10b18278-b017-43e4-8b80-2da82f7aee43/Hwy114Closeupaerialtimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/10b18278-b017-43e4-8b80-2da82f7aee43/Hwy114Closeupaerialtimg.jpg" alt="Close-up Aerial — Hwy 114" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Close-up Aerial</h3><p class="proj">Hwy 114</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/aa8508cb-1743-49ce-b52d-8be92d6d160f/Gloriaaptsretailmaptimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/aa8508cb-1743-49ce-b52d-8be92d6d160f/Gloriaaptsretailmaptimg.jpg" alt="Retail Map — Gloria Apartments" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Retail Map</h3><p class="proj">Gloria Apartments</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/6176cf77-24c1-4796-815c-567ff4ce0e90/retailwithdesctimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/6176cf77-24c1-4796-815c-567ff4ce0e90/retailwithdesctimg.jpg" alt="Retail Map with Property Description" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Retail Map with Property Description</h3></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/71bb6e7d-35fe-4337-894a-dccea3654943/Hwy114Competitionmaptimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/71bb6e7d-35fe-4337-894a-dccea3654943/Hwy114Competitionmaptimg.jpg" alt="Competition Map — Hwy 114" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>Competition Map</h3><p class="proj">Hwy 114</p></div></a>
-      <a class="port-card" data-cat="digital" style="--span:6" href="https://ucarecdn.com/63e6495d-46a0-414a-8acf-2a8d6521ede6/AtlasHighAerialRetailMaptimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/63e6495d-46a0-414a-8acf-2a8d6521ede6/AtlasHighAerialRetailMaptimg.jpg" alt="High Aerial Retail Map — Atlas" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Digital &amp; Social</div><h3>High Aerial Retail Map</h3><p class="proj">Atlas</p></div></a>
-      <a class="port-card" data-cat="email" style="--span:4" href="https://ucarecdn.com/f53280f3-bcd4-499f-a917-17668d56971a/iconmd.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/f53280f3-bcd4-499f-a917-17668d56971a/iconmd.jpg" alt="Agent Newsletter" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Email Newsletter</div><h3>Agent Newsletter</h3></div></a>
-      <a class="port-card" data-cat="email" style="--span:4" href="https://ucarecdn.com/d17a5e6f-bef3-451f-81bc-9e21f1a71fec/BerubeCoInceblast.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/d17a5e6f-bef3-451f-81bc-9e21f1a71fec/BerubeCoInceblast.jpg" alt="Email Blast — Berube &amp; Co" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Email Newsletter</div><h3>Email Blast</h3><p class="proj">Berube &amp; Co</p></div></a>
-      <a class="port-card" data-cat="email" style="--span:4" href="https://ucarecdn.com/b83860c3-dd3f-4d73-8fa6-cb82c7154111/Mailertimg.jpg" data-lightbox="work"><div class="thumb"><img src="https://ucarecdn.com/b83860c3-dd3f-4d73-8fa6-cb82c7154111/Mailertimg.jpg" alt="Mailer Template — Christian Reid" loading="lazy"><span class="tag">Enlarge</span></div><div class="port-info"><div class="cat">Email Newsletter</div><h3>Mailer Template</h3><p class="proj">Christian Reid</p></div></a>
-      <a class="port-card" data-cat="presentation" style="--span:6" href="projects/pitch-deck/govic-capital.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/924daca2-9371-49e2-bd06-ad25f8d2ae8a/GovicCapitalThumbnail.jpg" alt="Team Pitch Deck — Govic Capital" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Presentations</div><h3>Team Pitch Deck</h3><p class="proj">Govic Capital</p></div></a>
-      <a class="port-card" data-cat="presentation" style="--span:6" href="projects/pitch-deck/attobahn.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/27c7823d-e402-41c3-8814-d73477e81646/AttobahnThumbnail.jpg" alt="Problem-Solution Deck — Attobahn" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Presentations</div><h3>Problem-Solution Deck</h3><p class="proj">Attobahn</p></div></a>
-      <a class="port-card" data-cat="presentation" style="--span:6" href="projects/pitch-deck/dental-capital.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/488f6f1a-225d-4ae6-bc46-5e3820805538/DentalCapitalThumbnail.jpg" alt="Investor Pitch Deck — Dental Capital" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Presentations</div><h3>Investor Pitch Deck</h3><p class="proj">Dental Capital</p></div></a>
-      <a class="port-card" data-cat="presentation" style="--span:6" href="projects/pitch-deck/oran-capital.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/4a5cedd7-9ff5-4832-8084-60f3356db3be/OranCapitalThumbnail.jpg" alt="Investor Pitch Deck — Oran Capital" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Presentations</div><h3>Investor Pitch Deck</h3><p class="proj">Oran Capital</p></div></a>
-      <a class="port-card" data-cat="presentation" style="--span:12" href="projects/pitch-deck/vertaag.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/b9498fa8-6b2a-4049-b9a4-e6bf4302fd53/VertaagThumbnail.jpg" alt="Problem-Solution Deck — Vertaag" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Presentations</div><h3>Problem-Solution Deck</h3><p class="proj">Vertaag</p></div></a>
-      <a class="port-card" data-cat="presentation" style="--span:6" href="projects/pitch-deck/civog.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/b8040414-8481-4da0-b7ae-075816925f4d/CivogThumbnail.jpg" alt="Pitch Deck — Civog" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Presentations</div><h3>Pitch Deck</h3><p class="proj">Civog</p></div></a>
-      <a class="port-card" data-cat="presentation" style="--span:6" href="projects/pitch-deck/panoramic-fund.html" target="_blank" rel="noopener"><div class="thumb"><img src="https://ucarecdn.com/4924cba8-b234-44b7-8664-83e07a441767/PESThumbnail.jpg" alt="Fund Pitch Deck — Panoramic Fund" loading="lazy"><span class="tag">View project</span></div><div class="port-info"><div class="cat">Presentations</div><h3>Fund Pitch Deck</h3><p class="proj">Panoramic Fund</p></div></a>
+  <section id="about">
+    <div class="about-grid">
+      <div class="portrait-wrap rv">
+        <div class="portrait"><div class="portrait-in"><img src="https://ucarecdn.com/cdb8fdf8-52f6-4ccc-bad9-b5176f067d93/maee.png" alt="Mae Villareal"></div></div>
+      </div>
+      <div class="about-copy rv">
+        <div class="kicker">About</div>
+        <h2>Hi, I'm <em class="s">Mae</em></h2>
+        <p class="lead">Graphic and web designer with over ten years of experience, across branding, print, digital and presentation design — delivering minimalist, visually striking work.</p>
+        <p>My design philosophy centers on simplicity and clean aesthetics: less is more, and effective communication comes through thoughtful design. I take a fresh approach to each project, making sure my clients' vision is understood and delivered.</p>
+        <p>Outside of designing, I enjoy the outdoors, music, and reading — a good hike or a quiet walk is usually where the next idea shows up.</p>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section class="cta-sec" id="contact">
     <div class="cta rv">
-      <div class="kicker">Contact</div>
-      <h2>Let's work <em class="s">together</em></h2>
-      <p>Available for remote design and marketing support — flexible across time zones and multiple brands.</p>
+      <div class="kicker">Let's work together</div>
+      <h2>Available for remote graphic design &amp; <em class="s">marketing support</em></h2>
+      <p>Flexible across time zones and multiple brands.</p>
       <div class="cta-actions">
-        <a class="btn" href="mailto:norleenvillareal@gmail.com">Contact Me <span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-        <button class="btn btn-ghost" id="copyEmail" type="button" data-email="norleenvillareal@gmail.com"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="lbl">Copy email address</span></button>
+        <a class="btn" href="mailto:norleenvillareal@gmail.com">Email Me <span class="ar ne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+        <button class="btn btn-ghost plain" type="button" data-copy-email="norleenvillareal@gmail.com"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="lbl">Copy email address</span></button>
       </div>
     </div>
   </section>
@@ -551,145 +187,6 @@
   <button class="lb-next" aria-label="Next">&#8250;</button>
   <div class="lb-cap"></div>
 </div>
-
-<script>
-  document.documentElement.classList.add('js');
-
-  // hero: stacked-card slider
-  (function(){
-    const slides=[...document.getElementById('slides').children];
-    const dotsWrap=document.getElementById('dots');
-    const count=slides.length;
-    let i=0,timer;
-    slides.forEach((_,n)=>{
-      const d=document.createElement('button');
-      d.className='dot';
-      d.setAttribute('aria-label','Show slide '+(n+1));
-      d.addEventListener('click',()=>{go(n);restart();});
-      dotsWrap.appendChild(d);
-    });
-    function go(n){
-      const prev=i; i=n;
-      slides.forEach((s,idx)=>{
-        const pos=(idx-i+count)%count;
-        s.dataset.pos=(idx===prev&&prev!==i&&pos===count-1)?'out':pos;
-        s.setAttribute('tabindex',pos===0?'0':'-1');
-        s.setAttribute('aria-hidden',pos===0?'false':'true');
-      });
-      [...dotsWrap.children].forEach((d,idx)=>d.classList.toggle('active',idx===i));
-    }
-    function restart(){clearInterval(timer);timer=setInterval(()=>go((i+1)%count),4200);}
-    const sl=document.getElementById('slider');
-    sl.addEventListener('mouseenter',()=>clearInterval(timer));
-    sl.addEventListener('mouseleave',restart);
-    go(0);restart();
-  })();
-
-  // nav: scrolled state + active section
-  (function(){
-    const hdr=document.querySelector('header');
-    const links=[...document.querySelectorAll('nav ul a')];
-    const secs=links.map(a=>document.querySelector(a.hash));
-    function check(){
-      hdr.classList.toggle('scrolled',scrollY>20);
-      const y=innerHeight*.35;let cur=-1;
-      secs.forEach((s,k)=>{if(s){const r=s.getBoundingClientRect();if(r.top<=y&&r.bottom>y)cur=k;}});
-      links.forEach((a,k)=>a.classList.toggle('active',k===cur));
-    }
-    addEventListener('scroll',check,{passive:true});addEventListener('resize',check);check();
-  })();
-
-  // reveal on scroll
-  (function(){
-    const els=document.querySelectorAll('.rv');
-    if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
-    const io=new IntersectionObserver(es=>es.forEach(e=>{
-      if(e.isIntersecting){
-        const sib=[...e.target.parentElement.children].filter(x=>x.classList.contains('rv'));
-        e.target.style.transitionDelay=(Math.max(0,sib.indexOf(e.target))*80)+'ms';
-        e.target.classList.add('in');io.unobserve(e.target);
-      }
-    }),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-    els.forEach(e=>io.observe(e));
-  })();
-
-  // portfolio filter
-  (function(){
-    const filters=document.querySelectorAll('#filters .filter');
-    const cards=document.querySelectorAll('#portGrid .port-card');
-    filters.forEach(f=>f.addEventListener('click',()=>{
-      filters.forEach(x=>x.classList.remove('active'));
-      f.classList.add('active');
-      const cat=f.dataset.cat;let n=0;
-      cards.forEach(c=>{
-        const show=cat==='all'||c.dataset.cat===cat;
-        c.classList.toggle('hidden',!show);
-        if(show){c.style.animation='none';c.offsetHeight;c.style.animation='';c.style.animationDelay=Math.min(n++,12)*40+'ms';}
-      });
-    }));
-  })();
-
-  // mobile menu
-  (function(){
-    const b=document.getElementById('burger'),m=document.getElementById('mnav');
-    function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
-    b.addEventListener('click',()=>set(!m.classList.contains('open')));
-    m.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
-  })();
-
-  // lightbox: groups by data-lightbox value, skips hidden cards
-  (function(){
-    const lb=document.getElementById('lb'),img=lb.querySelector('img'),cap=lb.querySelector('.lb-cap');
-    let set=[],idx=0;
-    function show(){
-      const a=set[idx];
-      img.src=a.getAttribute('href');
-      const t=a.querySelector('h3'),p=a.querySelector('.proj');
-      cap.textContent=(t?t.textContent+(p?' — '+p.textContent:''):(a.dataset.caption||''))+(set.length>1?'   '+(idx+1)+' / '+set.length:'');
-      img.alt=t?t.textContent:'Project image';
-    }
-    function open(a){
-      const g=a.dataset.lightbox;
-      set=[...document.querySelectorAll('[data-lightbox="'+g+'"]')].filter(x=>!x.closest('.hidden'));
-      idx=Math.max(0,set.indexOf(a));show();lb.classList.add('open');document.body.style.overflow='hidden';
-      lb.querySelector('.lb-close').focus();
-    }
-    function close(){lb.classList.remove('open');document.body.style.overflow='';img.removeAttribute('src');}
-    function step(d){idx=(idx+d+set.length)%set.length;show();}
-    document.addEventListener('click',e=>{const a=e.target.closest('[data-lightbox]');if(a){e.preventDefault();open(a);}});
-    lb.querySelector('.lb-close').onclick=close;
-    lb.querySelector('.lb-prev').onclick=()=>step(-1);
-    lb.querySelector('.lb-next').onclick=()=>step(1);
-    lb.addEventListener('click',e=>{if(e.target===lb)close();});
-    document.addEventListener('keydown',e=>{
-      if(!lb.classList.contains('open'))return;
-      if(e.key==='Escape')close();
-      if(e.key==='ArrowRight')step(1);
-      if(e.key==='ArrowLeft')step(-1);
-    });
-  })();
-  // cursor glow (eased follow)
-  (function(){
-    const g=document.getElementById('cglow');
-    if(!matchMedia('(hover:hover) and (pointer:fine)').matches||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-    let tx=innerWidth/2,ty=innerHeight/3,x=tx,y=ty,raf=0;
-    function tick(){x+=(tx-x)*.12;y+=(ty-y)*.12;g.style.transform=`translate3d(${x}px,${y}px,0)`;
-      raf=(Math.abs(tx-x)+Math.abs(ty-y)>.5)?requestAnimationFrame(tick):0;}
-    addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;g.classList.add('on');if(!raf)raf=requestAnimationFrame(tick);},{passive:true});
-    document.addEventListener('pointerleave',()=>g.classList.remove('on'));
-  })();
-
-  // copy email
-  (function(){
-    const b=document.getElementById('copyEmail'),l=b.querySelector('.lbl'),email=b.dataset.email;let t;
-    function done(ok){l.textContent=ok?'Copied!':email;b.classList.toggle('copied',ok);clearTimeout(t);t=setTimeout(()=>{l.textContent='Copy email address';b.classList.remove('copied');},2200);}
-    b.addEventListener('click',()=>{
-      if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(email).then(()=>done(true),()=>fallback());}else fallback();
-    });
-    function fallback(){const ta=document.createElement('textarea');ta.value=email;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
-      let ok=false;try{ok=document.execCommand('copy');}catch(e){}ta.remove();done(ok);}
-  })();
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>
